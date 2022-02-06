@@ -13,7 +13,6 @@
     name: "{{ service_name }}"
     state: "{{ web_server_state }}"
     enabled: "{{ web_server_enabled }}"
-
-- handlers:
-  - notify: Enable service at firewall
-  - notify: Restart firewall
+    notify:
+      - Enable_service_at_firewall
+      - Restart_firewall
