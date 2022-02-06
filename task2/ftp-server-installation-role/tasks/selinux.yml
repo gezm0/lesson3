@@ -11,12 +11,12 @@
 
 - name: Adding dir to public_content_t for selinux
   sefcontext:
-    target: '/var/ftp/pub(/.*)?'
+    target: "{{ anonymous_root }}"
     setype: public_content_rw_t
     state: present
 
 - name: Adding dir to public_content_rw_t for selinux
   sefcontext:
-    target: '/var/ftp/pub/upload(/.*)?'
+    target: "{{ anonymous_root_upload }}"
     setype: public_content_rw_t
     state: present
