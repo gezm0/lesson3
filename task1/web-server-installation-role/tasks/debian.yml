@@ -1,0 +1,21 @@
+- name: Install web server
+  apt:
+    name: "apache2"
+    state: present
+  register: service_name
+
+- name: Create document root for web service
+  file:
+    path: "{{ www_data_path }}"
+    state: directory
+    owner: "{{ www_owner_deb }}"
+    group: "{{ www_group_deb }}"
+    mode: "{{ www_data_path_perm }}"
+
+- name: Write index file to web service root
+  copy:
+    src: "{{ www_index_file }}"
+    dest: "{{ www_data_path }}"
+    owner: "{{ www_owner_deb }}"
+    group: "{{ www_group_deb }}"
+    mode: "{{ www_index_file_perm }}"

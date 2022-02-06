@@ -1,0 +1,13 @@
+---
+# handlers file for web-server-installation-role
+
+- name: Enable service at firewall
+  firewalld:
+      service: http
+      state: enabled
+      permanent: true
+
+- name: Restart firewall
+  service: 
+      name: firewalld 
+      state: restarted

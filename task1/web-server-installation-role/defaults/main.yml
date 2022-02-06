@@ -1,0 +1,5 @@
+---
+# defaults file for web-server-installation-role
+
+web_server_state: started
+web_server_enabled: True
