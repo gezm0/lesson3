@@ -11,4 +11,4 @@
     target: '/var/ftp/pub(/.*)?'
     setype: public_content_t
     state: present
-    reload: no
+    reload: yes
