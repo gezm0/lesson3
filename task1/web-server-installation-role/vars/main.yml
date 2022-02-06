@@ -1,14 +1,14 @@
 ---
 # vars file for web-server-installation-role
-www_data_path: /var/www/html
-www_index_file: index.html
+www_data_path: '/var/www/html'
+www_index_file: 'index.html'
 
 www_data_path_perm: '0755'
 www_index_file_perm: '0644'
 
 # os specific variables
-www_owner_el: apache
-www_group_el: apache
+www_owner_el: 'apache'
+www_group_el: 'apache'
 
-www_owner_deb: www-data
-www_group_deb: www-data
+www_owner_deb: 'www-data'
+www_group_deb: 'www-data'
