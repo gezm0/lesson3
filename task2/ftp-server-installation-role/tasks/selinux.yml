@@ -7,7 +7,7 @@
 
 - seboolean:
     name: ftpd_anon_write
-    state: {{ ftpd_anon_write_state }}
+    state: "{{ ftpd_anon_write_state }}"
     persistent: yes
 
 - sefcontext:

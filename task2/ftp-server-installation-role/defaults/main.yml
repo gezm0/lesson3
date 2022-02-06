@@ -3,5 +3,5 @@
 
 ftpd_server_state: started
 ftpd_server_enabled: True
-ftpd_anon_write_state: yes
+ftpd_anon_write_state: on
 ftpd_config: /etc/vsftpd/vsftpd.conf
