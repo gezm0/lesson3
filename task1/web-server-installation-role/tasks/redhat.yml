@@ -1,13 +1,11 @@
 - name: Install web server
-  vars:
-    web_service_name: httpd
   yum:
-    name: "{{ web_service_name }}"
+    name: "httpd"
     state: present
 
 - name: Ensure web server enabled and started
   service: 
-    name: "{{ web_service_name }}"
+    name: "httpd"
     state: "{{ web_server_state }}"
     enabled: "{{ web_server_enabled }}"
 
