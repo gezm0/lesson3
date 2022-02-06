@@ -1,0 +1,4 @@
+---
+# vars file for ftp-server-installation-role
+
+ftp_server: vsftpd

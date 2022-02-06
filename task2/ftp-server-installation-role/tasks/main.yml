@@ -1,0 +1,16 @@
+---
+# tasks file for ftp-server-installation-role
+
+- name: Install ftp server
+  yum:
+    name: "{{ ftp_server }}"
+    state: present
+
+- name: Ensure ftp server enabled and started
+  service: 
+    name: "{{ ftp_server }}"
+    state: "{{ ftp_server_state }}"
+    enabled: "{{ ftp_server_enabled }}"
+  notify:
+    - Enable_service_at_firewall
+    - Restart_firewall

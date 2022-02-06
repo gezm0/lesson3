@@ -1,0 +1,13 @@
+---
+# handlers file for ftp-server-installation-role
+
+- name: Enable_service_at_firewall
+  firewalld:
+      port: 20-21/tcp
+      state: enabled
+      permanent: true
+
+- name: Restart_firewall
+  service: 
+      name: firewalld 
+      state: restarted

@@ -1,0 +1,5 @@
+---
+# defaults file for ftp-server-installation-role
+
+ftp_server_state: started
+ftp_server_enabled: True
