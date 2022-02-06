@@ -18,6 +18,7 @@
   file:
     path: "{{ anonymous_root }}"
     owner: "{{ ftp_anon_files_owner }}"
+    group: "{{ ftp_anon_files_group }}"
     mode: '0755'
     state: directory
 
@@ -25,5 +26,6 @@
   file:
     path: "{{ anonymous_upload }}"
     owner: "{{ ftp_anon_files_owner }}"
+    group: "{{ ftp_anon_files_group }}"
     mode: '0777'
     state: directory
