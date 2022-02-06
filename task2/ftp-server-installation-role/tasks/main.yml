@@ -6,13 +6,8 @@
     name: "{{ ftpd_server }}"
     state: present
 
-- name: Install required packages for sefcontext
-  yum:
-    name: 
-      - python3-libselinux 
-      - python3-libsemanage 
-      - python3-policycoreutils
-  state: present
+- name: Install some required packages for sefcontext
+  import_tasks: requirements.yml
 
 - name: Selinux options setting
   import_tasks: selinux.yml
