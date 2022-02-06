@@ -14,7 +14,7 @@
     mode: '0644'
     backup: yes
 
-- name: Create homedir for anonymous
+- name: Create home dir for anonymous
   file:
     path: "{{ anonymous_root }}"
     owner: "{{ ftp_anon_files_owner }}"
@@ -25,5 +25,5 @@
   file:
     path: "{{ anonymous_upload }}"
     owner: "{{ ftp_anon_files_owner }}"
-    mode: '0755'
+    mode: '0777'
     state: directory
