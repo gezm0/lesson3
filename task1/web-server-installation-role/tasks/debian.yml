@@ -1,13 +1,13 @@
 - name: Install web server
   vars:
-    service_name: apache2
+    service_name: "apache2"
   apt:
-    name: "{{ service_name }}"
+    name: {{ service_name }}
     state: present
 
 - name: Ensure web server enabled and started
   service:
-    name: "{{ service_name }}"
+    name: {{ service_name }}
     state: "{{ web_server_state }}"
     enabled: "{{ web_server_enabled }}"
 
