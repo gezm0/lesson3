@@ -9,11 +9,11 @@
 - name: Install some required packages for sefcontext
   import_tasks: requirements.yml
 
-- name: Selinux options setting
-  import_tasks: selinux.yml
-
 - name: Loading ftp server settings
   import_tasks: ftpd.yml
+
+- name: Selinux options setting
+  import_tasks: selinux.yml
 
 - name: Ensure ftp server enabled and started
   service: 
