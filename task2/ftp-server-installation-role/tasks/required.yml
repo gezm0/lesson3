@@ -1,0 +1,10 @@
+---
+- name: Install required libselinux-python package for sefcontext
+  yum:
+    name: libselinux-python
+    state: present
+
+- name: Install required policycoreutils-python package for sefcontext
+  yum:
+    name: policycoreutils-python
+    state: present

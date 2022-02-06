@@ -1,0 +1,17 @@
+---
+- sefcontext:
+    target: "/var/ftp/pub/upload"
+    setype: public_content_t
+    reload: yes
+    state: present
+
+- seboolean:
+    name: ftpd_anon_write
+    state: {{ ftpd_anon_write_state }}
+    persistent: yes
+
+- sefcontext:
+    target: "/var/ftp/pub/upload"
+    setype: ftpd_anon_write
+    reload: yes
+    state: present

@@ -3,14 +3,20 @@
 
 - name: Install ftp server
   yum:
-    name: "{{ ftp_server }}"
+    name: "{{ ftpd_server }}"
     state: present
+
+- name: Install required packages for sefcontext
+  import_tasks: required.yml
+
+- name: Selinux options setting
+  import_tasks: selinux.yml
 
 - name: Ensure ftp server enabled and started
   service: 
-    name: "{{ ftp_server }}"
-    state: "{{ ftp_server_state }}"
-    enabled: "{{ ftp_server_enabled }}"
+    name: "{{ ftpd_server }}"
+    state: "{{ ftpd_server_state }}"
+    enabled: "{{ ftpd_server_enabled }}"
   notify:
     - Enable_service_at_firewall
     - Restart_firewall

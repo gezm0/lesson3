@@ -1,4 +1,5 @@
 ---
 # vars file for ftp-server-installation-role
 
-ftp_server: vsftpd
+ftpd_server: vsftpd
+ftpd_anon_write_state: yes
