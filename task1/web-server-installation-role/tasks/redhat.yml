@@ -4,6 +4,7 @@
   yum:
     name: "{{ service_name }}"
     state: present
+    register: "{{ service_name }}"
 
 - name: Create document root for web service
   file:
