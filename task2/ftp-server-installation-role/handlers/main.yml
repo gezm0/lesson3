@@ -3,7 +3,13 @@
 
 - name: Enable_service_at_firewall
   firewalld:
-      port: 20-21/tcp
+      service: ftp
+      state: enabled
+      permanent: true
+
+- name: Enable_pftp_service_at_firewall
+  firewalld:
+      port: 15000-15500/tcp
       state: enabled
       permanent: true
 

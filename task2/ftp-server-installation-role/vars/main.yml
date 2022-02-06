@@ -2,4 +2,6 @@
 # vars file for ftp-server-installation-role
 
 ftpd_server: vsftpd
-ftpd_anon_write_state: yes
+anonymous_root: /var/ftp/pub
+anonymous_upload: /var/ftp/pub/upload
+ftp_anon_files_owner: ftpuser

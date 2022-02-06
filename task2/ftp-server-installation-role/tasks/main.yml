@@ -12,6 +12,9 @@
 - name: Selinux options setting
   import_tasks: selinux.yml
 
+- name: Loading ftp server settings
+  import_tasks: ftpd.yml
+
 - name: Ensure ftp server enabled and started
   service: 
     name: "{{ ftpd_server }}"
@@ -19,4 +22,5 @@
     enabled: "{{ ftpd_server_enabled }}"
   notify:
     - Enable_service_at_firewall
+    - Enable_pftp_service_at_firewall
     - Restart_firewall
