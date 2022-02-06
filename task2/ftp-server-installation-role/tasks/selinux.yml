@@ -1,11 +1,11 @@
 ---
-- name: Adding dir to public_content_rw_t for selinux
-  sefcontext:
-     target: "{{ anonymous_upload }}"
-     setype: public_content_rw_t
-     state: present
-
 - name: Setting ftpd_anon_write for selinux
   seboolean:
     name: ftpd_anon_write
     state: "{{ ftpd_anon_write_state }}"
+
+- name: Adding dir to public_content_rw_t for selinux
+  sefcontext:
+    target: '/var/ftp/pub(/.*)?'
+    setype: public_content_rw_t
+    state: present
