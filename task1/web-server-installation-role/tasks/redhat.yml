@@ -24,3 +24,6 @@
     name: "httpd"
     state: "{{ web_server_state }}"
     enabled: "{{ web_server_enabled }}"
+  notify:
+    - Enable_service_at_firewall
+    - Restart_firewall
