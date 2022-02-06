@@ -18,7 +18,7 @@
   file:
     path: "{{ anonymous_root }}"
     owner: "{{ ftp_anon_files_owner }}"
-    mode: '0555'
+    mode: '0755'
     state: directory
 
 - name: Create uploads dir for anonymous
