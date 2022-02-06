@@ -47,7 +47,7 @@ connect_from_port_20=YES
 # a different user. Note! Using "root" for uploaded files is not
 # recommended!
 #chown_uploads=YES
-#chown_username=whoever
+#chown_username={{ ftp_anon_files_owner }}
 #
 # You may override where the log file goes if you like. The default is shown
 # below.
@@ -127,11 +127,11 @@ listen=YES
 pam_service_name=vsftpd
 userlist_enable=YES
 
-allow_writeable_chroot=YES
+#allow_writeable_chroot=YES
 
 pasv_enable=YES
 pasv_max_port=15500
 pasv_min_port=15000
 
-guest_enable=YES
-guest_username={{ ftp_anon_files_owner }}
+#guest_enable=YES
+#guest_username={{ ftp_anon_files_owner }}

@@ -4,4 +4,3 @@
 ftpd_server: vsftpd
 anonymous_upload: /var/ftp/pub/upload
 anonymous_root: /var/ftp/pub
-ftp_anon_files_owner: ftp
