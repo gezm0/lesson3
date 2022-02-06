@@ -5,6 +5,12 @@
     name: "{{ service_name }}"
     state: present
 
+- name: Ensure web server enabled and started
+  service:
+    name: "{{ service_name }}"
+    state: "{{ web_server_state }}"
+    enabled: "{{ web_server_enabled }}"
+
 - name: Create document root for web service
   file:
     path: "{{ www_data_path }}"
