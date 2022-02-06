@@ -1,10 +1,10 @@
 ---
-- name: Adding public_content_t to selinux
-  sefcontext:
-    target: "/var/ftp/pub/upload"
-    setype: public_content_t
-    reload: yes
-    state: present
+#- name: Adding public_content_t to selinux
+#  sefcontext:
+#    target: "/var/ftp/pub/upload"
+#    setype: public_content_t
+#    reload: yes
+#    state: present
 
 - name: Setting ftpd_anon_write for selinux
   seboolean:
@@ -12,9 +12,9 @@
     state: "{{ ftpd_anon_write_state }}"
     persistent: yes
 
-- name: Adding ftpd_anon_write to selinux
+- name: Adding dit to public_content_t to selinux
   sefcontext:
-    target: "/var/ftp/pub/upload"
-    setype: ftpd_anon_write
+    target: "{{ anonymous_upload }}"
+    setype: public_content_t
     reload: yes
     state: present
