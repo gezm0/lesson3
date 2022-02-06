@@ -4,6 +4,11 @@
     name: ftpd_anon_write
     state: "{{ ftpd_anon_write_state }}"
 
+- name: Allow passive ftp for selinux
+  seboolean:
+    name: ftpd_use_passive_mode
+    state: yes
+
 - name: Adding dir to public_content_t for selinux
   sefcontext:
     target: '/var/ftp/pub(/.*)?'
