@@ -1,10 +1,7 @@
 ---
-- name: Install required libselinux-python package for sefcontext
+- name: Install required packages for sefcontext
   yum:
-    name: libselinux-python
-    state: present
-
-- name: Install required policycoreutils-python package for sefcontext
-  yum:
-    name: policycoreutils-python
-    state: present
+    name: 
+      - python3-libsemanage
+      - policycoreutils-python-utils
+  state: present
