@@ -1,7 +1,0 @@
----
-- name: Install required packages for sefcontext
-  yum:
-    name: 
-      - python3-libsemanage
-      - policycoreutils-python-utils
-  state: present
