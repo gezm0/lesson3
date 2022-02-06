@@ -6,7 +6,7 @@
     name: "{{ ftpd_server }}"
     state: present
 
-- name: Install required packages for sefcontext
+- name: Install some required packages for sefcontext
   import_tasks: required.yml
 
 - name: Selinux options setting
