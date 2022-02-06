@@ -1,11 +1,4 @@
 ---
-- name: Creating user for anonymous ftp
-  user:
-    name: "{{ ftp_anon_files_owner }}"
-    password: '!'
-    password_lock: yes
-    state: present
-
 - name: Template a file to /etc/vsftpd/vsftpd.conf
   template:
     src: vsftpd.j2
